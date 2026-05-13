@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #05060a;
+  color: white;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+/* 🌈 ANIMATED GLOW BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg,#ff006a,#7c00ff,#00d4ff,#00ff9d);
+  opacity: 0.15;
+  filter: blur(90px);
+  animation: move 12s ease-in-out infinite;
+  z-index: -3;
+}
+
+@keyframes move {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(4%,4%); }
+  100% { transform: translate(0,0); }
+}
+
+/* 🌐 GRID BACKGROUND */
+.grid {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.06;
+  z-index: -2;
+}
+
+/* 🌌 PARTICLES CANVAS */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* 🔐 LOGIN SCREEN */
+.login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.login h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.sub {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.login input {
+  width: 320px;
+  max-width: 90%;
+  padding: 13px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  text-align: center;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  outline: none;
+}
+
+.login button {
+  width: 200px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg,#00c6ff,#0072ff);
+}
+
+.reset {
+  font-size: 12px;
+  color: #00c6ff;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.reset:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* 📦 MAIN APP */
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+header input {
+  padding: 10px;
+  width: 240px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  outline: none;
+}
+
+/* 🔳 INPUT PANEL */
+.panel {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* INPUT FIELDS */
+.panel input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  outline: none;
+}
+
+/* 🔐 GENERATOR SECTION */
+.generator {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* LENGTH SLIDER */
+.generator input[type="range"] {
+  width: 220px;
+}
+
+/* OPTIONS */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 🔐 STRENGTH TEXT (FIXED VISIBILITY) */
+.strength {
+  font-size: 14px;
+  margin-top: 4px;
+  opacity: 0.95;
+  display: block;
+}
+
+/* COLORS */
+.strength.weak { color: #ff4d4d; }
+.strength.medium { color: #ffb84d; }
+.strength.strong { color: #4dff88; }
+
+/* BUTTON ROW */
+.row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* 📦 PASSWORD LIST */
+#list {
+  margin-top: 18px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ITEM CARD */
+.item {
+  margin: 10px 0;
+  padding: 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.2s;
+}
+
+.item:hover {
+  background: rgba(255,255,255,0.09);
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* HIDE APP */
+.hidden {
+  display: none;
+}
